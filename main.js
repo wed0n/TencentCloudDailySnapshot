@@ -122,7 +122,7 @@ async function main() {
     await calculate("DeleteSnapshots", JSON.stringify(postBody))
 
     //创建实例快照
-    const snapshotName = '每日快照' + ' ' + getDate((Date.now() / 1000) | 0)
+    const snapshotName = '每日快照' + ' ' + getDate((Date.now() / 1000) | 0 + 28800) //UTC+8
     postBody = {
         'InstanceId': INSTANCE_ID,
         'SnapshotName': snapshotName
